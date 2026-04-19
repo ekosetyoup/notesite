@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Email Aktif</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        padding: 20px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      /* WRAPPER AGAR MOBILE SCROLL */
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-overflow: ellipsis;
+      }
+
+      th {
+        background: #f0f0f0;
+      }
+
+      /* Lebar kolom */
+      .toggle-col {
+        width: 40px;
+        text-align: center;
+      }
+      .email-col {
+        width: 260px;
+      }
+      .type-col {
+        width: 160px;
+      }
+      .note-col {
+        width: auto;
+      }
+      .layanan-col {
+        width: 80px;
+        text-align: center;
+      }
+      .status-col {
+        width: 100px;
+        text-align: center;
+      }
+
+      .main-row:hover {
+        background: #f1f1f1;
+        cursor: pointer;
+      }
+
+      .detail-row {
+        display: none;
+        background: #fafafa;
+      }
+
+      .indent {
+        padding-left: 40px;
+        color: #333;
+      }
+
+      .main-row.open td {
+        font-weight: 600;
+      }
+
+      /* STATUS */
+      .status-valid {
+        color: green;
+        font-weight: bold;
+      }
+
+      .status-belum {
+        color: orange;
+        font-weight: bold;
+      }
+
+      /* MOBILE ADAPTIVE */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        /* Hilangkan header */
+        thead {
+          display: none;
+        }
+
+        table,
+        tbody,
+        tr,
+        td {
+          display: block;
+          width: 100%;
+        }
+
+        tr {
+          margin-bottom: 12px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          background: #fff;
+          padding: 8px;
+        }
+
+        td {
+          border: none;
+          padding: 6px 4px;
+        }
+
+        /* Toggle */
+        .toggle-col {
+          display: inline-block;
+          font-weight: bold;
+          margin-right: 6px;
+        }
+
+        /* Email jadi judul */
+        .email-col {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 4px;
+          display: block;
+        }
+
+        /* Info ringkas */
+        .type-col,
+        .layanan-col,
+        .status-col {
+          display: inline-block;
+          font-size: 12px;
+          margin-right: 10px;
+        }
+
+        /* CATATAN FULL WIDTH */
+        .note-col {
+          display: block;
+          margin-top: 6px;
+          font-size: 12px;
+          line-height: 1.5;
+          color: #444;
+        }
+
+        /* Detail layanan */
+        .detail-row td {
+          padding-left: 10px;
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Daftar Email Aktif</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th class="toggle-col">+</th>
+            <th class="email-col">Email</th>
+            <th class="type-col">Tipe / Kode</th>
+            <th class="note-col">Catatan</th>
+            <th class="layanan-col">Layanan</th>
+            <th class="status-col">Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="emailTable">
+          <!-- DIISI OLEH JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
